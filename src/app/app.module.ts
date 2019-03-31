@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BsDropdownModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
-import { SidebarComponent } from './views/sidebar/sidebar.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
 
 import {APP_ROUTING} from './app.routes';
 
@@ -17,7 +17,7 @@ import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { LoginComponent } from './auth/login/login.component';
-import { NavbarComponent } from './views/navbar/navbar.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 import { LayoutsComponent } from './views/layouts/layouts.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {

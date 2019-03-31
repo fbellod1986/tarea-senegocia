@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../shared/services/api/api.service';
 import { IFormularioInfo } from '../../shared/interfaces/formulario';
-import { SidebarService } from '../sidebar/sidebar.service';
+import { SidebarService } from '../../shared/sidebar/sidebar.service';
 
 @Component({
   // tslint:disable-next-line:component-selector
