@@ -9,16 +9,17 @@ import { BsDropdownModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { LoginComponent } from './auth/login/login.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { LayoutsComponent } from './views/layouts/layouts.component';
 
 import {APP_ROUTING} from './app.routes';
 
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
-import { DashboardComponent } from './views/dashboard/dashboard.component';
-import { LoginComponent } from './auth/login/login.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
-import { LayoutsComponent } from './views/layouts/layouts.component';
+
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
