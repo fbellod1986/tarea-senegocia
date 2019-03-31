@@ -36,9 +36,13 @@ export class DashboardComponent implements OnInit {
   }
 
   onSubmit() {
-    this.api.get(`proveedor/Search?data={"pais_id":${this.formularioInformation.country_id}, "razon_social":'${this.formularioInformation.razonSocial}', "nombre_fantasia":'${this.formularioInformation.nombre}'}`).subscribe( (data:any) => {
-      
+
+    if (Number(this.formularioInformation.country_id) === 0) {
+
+      this.api.get(`proveedor/Search?data={"razon_social":'${this.formularioInformation.razonSocial}', "nombre_fantasia":'${this.formularioInformation.nombre}'}`).subscribe( (data:any) => {
+      this.valores_tabla = data;
       if (data.length === 0) {
+        this.valores_tabla = data;
         this.msg = 'No hay datos que desplegar';
         this.class = 'alert alert-danger';
       } else if (data.length !== 0) {
@@ -49,6 +53,29 @@ export class DashboardComponent implements OnInit {
       },error => {
           console.log('Error');
      });
+
+    } else if (Number(this.formularioInformation.country_id) !== 0) {
+      
+      this.api.get(`proveedor/Search?data={"pais_id":${Number(this.formularioInformation.country_id)}, "razon_social":'${this.formularioInformation.razonSocial}', "nombre_fantasia":'${this.formularioInformation.nombre}'}`).subscribe( (data:any) => {
+      this.valores_tabla = data;
+      if (data.length === 0) {
+        this.valores_tabla = data;
+        this.msg = 'No hay datos que desplegar';
+        this.class = 'alert alert-danger';
+      } else if (data.length !== 0) {
+        this.valores_tabla = data;
+        this.msg = 'Existen ' + data.length + ' Registros';
+        this.class = 'alert alert-success';
+      }
+      },error => {
+          console.log('Error');
+     });
+
+
+    }
+
+
+    
 
     
   }

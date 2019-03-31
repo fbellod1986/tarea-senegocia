@@ -6,25 +6,25 @@
 
         <div class="form-row">
             <div class="form-group col-md-4">
-                <select class="form-control" name="country_id" required [(ngModel)]="formularioInformation.country_id">Elije
-                  <option value="" selected>Elegir País ...</option>  
+                <select class="form-control" name="country_id" [(ngModel)]="formularioInformation.country_id">
+                  <option value = 0 selected>Elegir País ...</option>  
                   <option *ngFor="let selector of selectors" [value]="selector.pais_id">
                             {{selector.nombre}}
                     </option>
                 </select>
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
                 <input type="text" class="form-control" name="razonSocial" placeholder="Razón Social" [(ngModel)]="formularioInformation.razonSocial">
             </div>
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-4">
                 <input type="text" class="form-control" name="nombre" placeholder="Nombre" [(ngModel)]="formularioInformation.nombre">
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Buscar</button>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div *ngIf="msg" [class]=class><strong>{{msg}}</strong></div>
             </div>
         </div>
